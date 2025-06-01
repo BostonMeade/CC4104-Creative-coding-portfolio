@@ -19,5 +19,11 @@ Within the programs setup function, it will obtain the positions of the grid of 
 
 ## one key game (two players) with a clear win state - Tron Game
 (When speaking to Dave about the amount of keys I got told that we were allowed to use 2 keys per player)
+I chose to create a 2 player game because I want to create games, however I had trouble thinking of an intresting 2 player game that I could create when given only a single key. After finding out that we could use 2 keys I elected to recreate one of my favourite games, tron. The basic idea is 2 players with trails behind them that cannot be passed through. 
+![image](https://github.com/user-attachments/assets/2afe192f-d391-4fb4-bbb0-b284705f0310)
+When making this I decided to adapt one of my character movers from a Snake project that I had worked on independently. However I did have to adapt it to include a additional check to make sure that only the correct player would move if a key were pressed as KeyIsDown would apply an additional time if an another key is pressed while it is down, potentialy resulting in a unintended turn. This was solved by including an additional functtion that checked the last key that was pressed. Below is the code included to make it work. 
+![image](https://github.com/user-attachments/assets/e496ecf5-376b-438c-b16b-4e869519a315)
+I wanted to make it so that you wouldn't need to reload the page each time you wanted to replay the game so I included a way to get rid of the existing player and trail objects and then remaking the player objects, allowing a replay button to be used. 
+There is a big issue with the framerate dropping the longer the game goes on, this is due to the way the collision with the trails is handled. Each trail is doing a check each frame where they see if they are colliding with a player and then they make said player's alive variable equal false. At higher trail counts this function is running upwards of 50 times a frame, causing the frame drops. 
 
 [Run Tron Game Code](tron_game_2025_06_01_13_35_12/index.html)
