@@ -10,6 +10,10 @@ When creating the visuals of the clock I decided to go simple with just having t
 [Run My Spiral Clock code](Spiral_clock_with_easing_2025_06_01_13_26_19/index.html)
 
 ## A city or landscape generator, with at least 3 distinct types of building or land - City Generator
+I originally chose to create a city generator to mess around with the noise function introduced in class, I began by having a 2 dimensional sketch that had rectangles that would change colour based on 2 noise values. After learning how to create 3d sketches I took this idea and developed it into a city generator. I decided that I would have a spinning 3-dimensional city that would use noise to determine the height of buildings, ontop of having multiple building types that could appear. 
+When I first started coding the 3D version I began by having lots of rectangles appear in a grid, then having those squares change colour based on the noise. Then I implimented camera controls and spinning, on top of the height differences. This version of the project had to be altered a decent amount due to me creating it in the incorrect axis, making the camera controls confusing to use. Altering the project to work on the correct axis didn't take long. 
+![image](https://github.com/user-attachments/assets/e2b71d92-b502-4873-b6a7-9f8afd86a82d)
+Within the programs setup function, it will obtain the positions of the grid of buildings and will create a new Building object using 5 parameters, the X and Z axis's, the i and j values used to determine noise and a style which will determine the buildings type. Every function within the building class is a different show function for each building type. The first type is just a box with the given height. The second type is similar but includes an additional smaller box on top of the original box, giving a different visual shape to the building. The third type of building is just having the height multipled by 2 to create skyscraper-like buildings. The final type creates a park with a tree that has its overall size determined by the height. 
 
 [Run city generator Code](City_generator_3d_2025_06_01_13_31_57/index.html)
 
